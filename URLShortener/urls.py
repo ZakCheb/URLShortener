@@ -5,7 +5,11 @@ from .settings import SHORT_URL_LENGHT
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^go/(?P<target>[a-zA-Z0-9]{{{}}})/$'.format(SHORT_URL_LENGHT),RedirectPage),
-    
-    path('',HomePage),
+    re_path(r'^go/(?P<target>[a-zA-Z0-9]{{{}}})/?$'.format(SHORT_URL_LENGHT),RedirectPage),
+  
+    re_path(r'',HomePage),
+    re_path(r'^.*', Page404),
+
+
 ]
+

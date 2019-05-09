@@ -36,6 +36,8 @@ def RedirectPage(request,target):
     
     return redirect(link.original)
 
+def Page404(request):
+    return render(request,"index.html",{'msg':'Short Link do not exists.'})
 
 
 import random
